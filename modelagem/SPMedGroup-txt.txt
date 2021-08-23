@@ -1,0 +1,51 @@
+clinica
+(PK) idClinica
+nomeFantasia
+endereco
+funcionamento
+cnpj
+razaoSocial
+
+tipoUsuario
+(PK) idTipoUsuario
+tituloUsuario
+
+usuário
+(PK) idUsuário
+(FK) idTipoUsuario
+nomeUsuario
+email
+senha
+
+medico
+(PK) idMedico
+(FK) idUsuario
+(FK) idClinica
+nome
+
+especialidade
+(PK) idEspecialidade
+(FK) idMedico
+nomeEspecialidade
+ 
+Paciente
+(PK) idPaciente
+(FK) idUsuario
+nome
+idade
+cpf
+rg
+telefone
+
+consulta
+(PK) idConsulta
+(FK) idMedico
+(FK) idPaciente
+(FK) idSituacao
+data
+horario
+descricao
+
+situacao
+(PK) idSituacao
+descSituacao
