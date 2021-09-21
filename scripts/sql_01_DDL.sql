@@ -22,13 +22,14 @@ GO
 CREATE TABLE paciente(
 	idPaciente INT PRIMARY KEY IDENTITY (1,1),
 	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
-	nome VARCHAR (75) NOT NULL,
 	dataDeNascimento DATE NOT NULL,
 	rg VARCHAR (13) UNIQUE NOT NULL,
 	cpf VARCHAR (11) UNIQUE NOT NULL,
-	telefone VARCHAR (15) UNIQUE NOT NULL
+	telefone VARCHAR (15) UNIQUE,
+	endereco VARCHAR (300) NOT NULL
 );
 GO
+
 
 CREATE TABLE clinica(
 	idClinica INT PRIMARY KEY IDENTITY (1,1),
@@ -40,18 +41,18 @@ CREATE TABLE clinica(
 )
 GO
 
+CREATE TABLE especialidade(
+	idEspecialidade INT PRIMARY KEY IDENTITY (1,1),
+	nomeEspecialidade VARCHAR (30) UNIQUE NOT NULL,
+);
+GO
+
 CREATE TABLE medico(
 	idMedico INT PRIMARY KEY IDENTITY (1,1),
 	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
 	idClinica INT FOREIGN KEY REFERENCES clinica(idClinica),
-	nome VARCHAR (50) NOT NULL,
-);
-GO
-
-CREATE TABLE especialidade(
-	idEspecialidade INT PRIMARY KEY IDENTITY (1,1),
-	idMedico INT FOREIGN KEY REFERENCES medico(idMedico),
-	nomeEspecialidade VARCHAR (30) UNIQUE NOT NULL,
+	idEspecialidade INT FOREIGN KEY REFERENCES especialidade(idEspecialidade),
+	crm VARCHAR (25) NOT NULL UNIQUE
 );
 GO
 
@@ -71,3 +72,5 @@ CREATE TABLE consulta(
 	descricao VARCHAR (256) NOT NULL
 );
 GO
+
+
