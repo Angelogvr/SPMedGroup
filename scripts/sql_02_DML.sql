@@ -1,4 +1,4 @@
-USE SPMEDGROUP
+USE SPMEDGROUP_A
 GO
 
 INSERT INTO tipoUsuario (tituloUsuario)

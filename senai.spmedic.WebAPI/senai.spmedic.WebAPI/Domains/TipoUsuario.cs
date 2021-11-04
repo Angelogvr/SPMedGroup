@@ -5,9 +5,6 @@ using System.Collections.Generic;
 
 namespace senai.spmedic.WebAPI.Domains
 {
-    /// <summary>
-    /// Classe que representa entidade (tabela) de TiposUsuario
-    /// </summary>
     public partial class TipoUsuario
     {
         public TipoUsuario()
@@ -15,8 +12,8 @@ namespace senai.spmedic.WebAPI.Domains
             Usuarios = new HashSet<Usuario>();
         }
 
-        public byte IdTipoUsuario { get; set; }
-        public string TituloTipoUsuario { get; set; }
+        public int IdTipoUsuario { get; set; }
+        public string TituloUsuario { get; set; }
 
         public virtual ICollection<Usuario> Usuarios { get; set; }
     }

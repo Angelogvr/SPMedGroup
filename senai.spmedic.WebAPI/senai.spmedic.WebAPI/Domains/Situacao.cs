@@ -5,9 +5,6 @@ using System.Collections.Generic;
 
 namespace senai.spmedic.WebAPI.Domains
 {
-    /// <summary>
-    /// Classe que representa entidade (tabela) de Situacoes
-    /// </summary>
     public partial class Situacao
     {
         public Situacao()
@@ -15,8 +12,8 @@ namespace senai.spmedic.WebAPI.Domains
             Consulta = new HashSet<Consulta>();
         }
 
-        public byte IdSituacao { get; set; }
-        public string Descricao { get; set; }
+        public int IdSituacao { get; set; }
+        public string DescSituacao { get; set; }
 
         public virtual ICollection<Consulta> Consulta { get; set; }
     }
