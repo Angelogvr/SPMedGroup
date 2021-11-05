@@ -1,7 +1,9 @@
 ﻿using senai.spmedic.webAPI.Interfaces;
+using senai.spmedic.WebAPI.Contexts;
 using senai.spmedic.WebAPI.Domains;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,29 +11,68 @@ namespace senai.spmedic.WebAPI.Repositories
 {
     public class PacienteRepository : IPacienteRepository
     {
+
+        SPMEDGROUPContext ctx = new SPMEDGROUPContext();
         public void Atualizar(Paciente PacienteAtualizado)
         {
-            throw new NotImplementedException();
+            Paciente pacienteBuscado = BuscarPorId(PacienteAtualizado.IdPaciente);
+
+            pacienteBuscado.DataDeNascimento = PacienteAtualizado.DataDeNascimento;
+
+            if (PacienteAtualizado.IdUsuario != 0)
+            {
+                pacienteBuscado.IdUsuario = PacienteAtualizado.IdUsuario;
+            }
+
+            if (PacienteAtualizado.Cpf != null)
+            {
+                pacienteBuscado.Cpf = PacienteAtualizado.Cpf;
+            }
+
+            if (PacienteAtualizado.Endereco != null)
+            {
+                pacienteBuscado.Endereco = PacienteAtualizado.Endereco;
+            }
+
+            if (PacienteAtualizado.Rg != null)
+            {
+                pacienteBuscado.Rg = PacienteAtualizado.Rg;
+            }
+
+            if (PacienteAtualizado.Telefone != null)
+            {
+                pacienteBuscado.Telefone = PacienteAtualizado.Telefone;
+            }
+
+            ctx.Pacientes.Update(pacienteBuscado);
+
+            ctx.SaveChanges();
         }
 
         public Paciente BuscarPorId(int idPaciente)
         {
-            throw new NotImplementedException();
+            return ctx.Pacientes.Include(u => u.IdUsuarioNavigation).FirstOrDefault(p => p.IdPaciente == idPaciente);
         }
 
         public void Cadastrar(Paciente novoPaciente)
         {
-            throw new NotImplementedException();
+            ctx.Pacientes.Add(novoPaciente);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int idPaciente)
         {
-            throw new NotImplementedException();
+            Paciente pacienteBuscado = BuscarPorId(idPaciente);
+
+            ctx.Pacientes.Remove(pacienteBuscado);
+
+            ctx.SaveChanges();
         }
 
         public List<Paciente> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Pacientes.Include(u => u.IdUsuarioNavigation).ToList();
         }
     }
 }
