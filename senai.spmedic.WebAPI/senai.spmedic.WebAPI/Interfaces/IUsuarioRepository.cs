@@ -35,6 +35,7 @@ namespace senai.spmedic.webAPI.Interfaces
         /// </summary>
         /// <returns> Uma lista de usuários</returns>
         List<Usuario> Listar();
+        Usuario Login(object email, object senha);
 
         /// <summary>
         /// Atualiza os dados de um usuário
