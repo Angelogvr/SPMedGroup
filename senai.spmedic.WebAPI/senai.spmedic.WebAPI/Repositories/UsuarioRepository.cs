@@ -95,6 +95,11 @@ namespace senai.spmedic.WebAPI.Repositories
             return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
 
+        public Usuario Login(object email, object senha)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SalvarPerfilDir(IFormFile foto, int id_usuario)
         {
             string nome_novo = id_usuario.ToString() + ".png";
