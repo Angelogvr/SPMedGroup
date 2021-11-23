@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"fernando@gmail.com\",\r\n    \"senha\" : \"fezinho13\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"ligia@gmail.com\",\r\n    \"senha\" : \"ligia123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +82,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idTipoUsuario\" : 3,\r\n    \"nomeUsuario\" : \"Marquinhos\",\r\n    \"email\" : \"marcos@emailadm.com\",\r\n    \"senha\" : \"adm@bala\"\r\n}",
+							"raw": "{\r\n    \"idTipoUsuario\" : 3,\r\n    \"nomeUsuario\" : \"Agnelo\",\r\n    \"email\" : \"agnelo@email.com\",\r\n    \"senha\" : \"agn@elo\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -110,7 +110,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idUsuario\" : 11,\r\n    \"nomeUsuario\" : \"Marcos\",\r\n    \"email\" : \"marcos@emailadm.com\",\r\n    \"senha\" : \"adm@bala\"\r\n}",
+							"raw": "{\r\n    \"idUsuario\" : 11,\r\n    \"nomeUsuario\" : \"Agnelo\",\r\n    \"email\" : \"agnelo@email.com\",\r\n    \"senha\" : \"agn@elo\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
