@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 
 import React, {Component} from 'react';
 
@@ -8,9 +8,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {StatusBar, StyleSheet} from 'react-native';
 
 
+const AuthStack = createStackNavigator();
 import Login from './src/telas/login'
 
-const AuthStack = createStackNavigator();
 
 
 
