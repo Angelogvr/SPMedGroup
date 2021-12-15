@@ -5,10 +5,7 @@ import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-d
 
 import './index.css';
 
-import Home from './pages/home/Home';
 import Login from './pages/login';
-import Consultas from './pages/consultas/Consultas';
-import NotFound from './pages/notFound/NotFound';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -64,11 +61,11 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home} /> {/* Home */}
+        {/* <Route exact path="/" component={Home} /> Home */}
         <Route path="/login" component={Login} /> {/* Login */}
-        <Route path="/consultas" component={Consultas} /> {/* Consultas */}
-        <Route path="/notFound" component={NotFound} /> {/* Not Found */}
-        <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
+        {/* <Route path="/consultas" component={Consultas} /> Consultas */}
+        {/* <Route path="/notFound" component={NotFound} /> Not Found */}
+        {/* <Redirect to="/notFound" /> Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
     </div>
   </Router>
